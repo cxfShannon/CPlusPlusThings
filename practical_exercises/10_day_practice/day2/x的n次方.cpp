@@ -2,31 +2,25 @@
 using namespace std;
 double power(double x, int n);
 
-int main(int argc, char const *argv[])
-{
-    int x;
-    cin>>x;
-    int wei=0;
-    int sum=0;
-    int each,chu;
-    for(int i=0;i<8;i++)
-    {
-        each=x%10;
-        chu=x/10;
-        sum+=each*power(2,wei);
-        x=chu;
-        wei++;
-    }
-    cout<<sum<<endl;
-    system("pause");
-    return 0;
+void main() {
+	int x, n;
+	int wei = 0;
+	int sum = 0;
+	int each, chu;
+
+	cout << "算x的n次方，输入x：" << endl;
+	cin >> x;
+	cout << "继续输入n：" << endl;
+	cin >> n;
+	sum = power(x, n);
+	cout << x << "的" << n << "次方为：" << sum << endl;
 }
-double power(double x, int n)
-{
-    double val = 1.0;
-    while(n--)
-    {
-        val*=x;
-    }
-    return val;
+
+double power(double x, int n) {
+	double val = 1.0;
+	while (n--)
+	{
+		val *= x;
+	}
+	return val;
 }
