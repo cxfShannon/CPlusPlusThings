@@ -2,29 +2,29 @@
 using namespace std;
 class base{
 	int x;
-public:
-	void setx(int n){	x=n;	}
-	int getx(){	return x;  }
-	void showx()	{	cout<<x<<endl;  }
+	public:
+		void setx(int n) { x = n; }
+		int getx() { return x; }
+		void showx() { cout << "x = " << x << endl; }
 };
-//ÅÉÉúÀà
-class derived:public base{
+// æ´¾ç”Ÿç±»
+class derived :public base {
 	int y;
-public:
-	void sety(int n){	y=n;	}
-	void sety(){	y=getx();    }
-	void showy()
-	{	cout<<y<<endl;   }
+	public:
+		void sety(int n) { y = n; }
+		void sety() { y = getx(); }
+		void showy() { cout << "y = " << y << endl; }
 };
-//ÅÉÉúÀà²»¿ÉÖ±½Ó·ÃÎÊ»ùÀàµÄprivate³ÉÔ±£¬¿ÉÍ¨¹ý»ùÀàµÄ¹²ÓÐ³ÉÔ±º¯Êý·ÃÎÊ
-int main()
-{	derived obj;
-	obj.setx(10);	
-    obj.sety(20);
-	obj.showx();	
-    obj.showy();
+//æ´¾ç”Ÿç±»ä¸å¯ç›´æŽ¥è®¿é—®åŸºç±»çš„privateæˆå‘˜ï¼Œå¯é€šè¿‡åŸºç±»çš„å…±æœ‰æˆå‘˜å‡½æ•°è®¿é—®
+int main() {
+	derived obj;
+	obj.setx(10);
+	obj.sety(20);
+	obj.showx();
+	obj.showy();
 	obj.sety();
-	obj.showx();	
-    obj.showy();
-    system("pause");
+	obj.showx();
+	obj.showy();
+	system("pause");
+	return 0;
 }
